@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Graduate' rel='stylesheet'>
+  <link href='style.css' rel='stylesheet'>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bottle game</title>
+</head>
+
+<body>
+    <div id="wrapperAll">
+        <div class="container-overlay" id="containerverlay"></div>
+        <div class="stars-container" id='starsContainer'>
+          <img class="stars" src="https://i.imgur.com/HRdPacl.png" alt="stars">
+          <img class="stars" src="https://i.imgur.com/HRdPacl.png" alt="stars">
+          <img class="stars" src="https://i.imgur.com/HRdPacl.png" alt="stars">
+          <img class="stars" src="https://i.imgur.com/HRdPacl.png" alt="stars">
+        </div>
+        <div class="container" id="container">
+          <div id="hp-bar-container">
+            <div id="hp-bar-green"></div>
+            <div id="hp-bar-red"></div>
+          </div>
+          <img src="https://i.ibb.co/41rFf7w/blue-Scale.png" id="platformImg" alt="" class="platform">
+          <div onclick="pauseGame()" style="position:absolute; cursor: pointer; left: 1%; top: 1%; visibility: hidden; z-index: 4;" id="pauseDiv">
+          <img src="https://i.ibb.co/9H5JxpL/Group-14.png" alt="pause" id="pauseButton" style=" width: 3vmin; height: 3vmin;">
+          </div>
+          <div id="scoreDiv" class="score"></div>
+          <div id="hpDiv" class="hp"> 
+            <table class="hpTable">
+              <tr id="hpTR">
+              </tr>
+            </table>
+          </div>
+          <div id="playButton" class="play-button">start</div>
+          <div id="notLoggedDiv" class="not-logged-div">
+            <div id="signUpDiv" class="sign-up-button" onclick="signUp()">sign up</div>
+            <div id="logAsGuestDiv" class="log-guest-button" onclick="createGuest(), loggedIn()">play as guest</div>
+            <p id="logInP" class="log-in-p" onclick="logIn()">already have an account? <u>log in!</u></p>
+          </div>
+          <div class="hoverable-container">     <!-- shop -->
+          <div id="shopDiv" class="shop-div lobby-icons" onclick="showShop()">
+            <img src="https://i.ibb.co/bX4QVm6/shopping-cart.png" alt="">
+            <span class="name-tag-lobby">shop</span>
+          </div> </div>
+      
+          <div class="hoverable-container">     <!-- loadout -->
+          <div id="loadoutDiv" class="loadout-div lobby-icons" onclick="showLoadout()">
+            <img src="https://i.ibb.co/t42yLdF/layout.png" alt="">
+            <span class="name-tag-lobby">loadout</span>
+          </div> </div>
+          <div class="hoverable-container">     <!-- missions -->
+          <div id="missionsDiv" class="missions-div lobby-icons" onclick="showMissions()">
+            <img src="https://i.ibb.co/3dTjwNC/plug-1.png" alt="">
+            <span class="name-tag-lobby">missions</span>
+          </div> </div>
+          <div class="hoverable-container">     <!-- mute -->
+            <div id="muteDiv" class="mute-div lobby-icons" onclick="handleMuteClick()">
+              <img src="https://i.imgur.com/dKiMctL.png" alt="" id="muteButtonImg">
+              <span class="name-tag-lobby" id="muteButtonSpan">mute</span>
+            </div> </div>
+            <div class="hoverable-container">     <!-- settings -->
+              <div id="settingsDiv" class="settings-div lobby-icons" onclick="showSettings()">
+                <img src="https://i.imgur.com/DaNMTqa.png" alt="">
+                <span class="name-tag-lobby">settings</span>
+              </div> </div>
+              <div id="gameOverDiv" class="gameover-div">
+                <p class="game-over-text">game over</p>
+                <p class="stats1" style="top: 25%;">elims:</p>
+                <p class="stats-number" id="eliminations" style="top: 25%;">0</p>
+                <p class="stats1" style="top: 40%;">time alive:</p>
+                <p class="stats-number" id="timeAlive" style="top: 40%;">0:00</p>
+                <p class="stats1" style="top: 55%;">accuracy:</p>
+                <p class="stats-number" id="accuracy" style="top: 55%;">0%</p>
+                <p class="stats1" style="top: 70%; font-size: 1.75em; color: #5193A5; text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.25);">SCORE</p>
+                <p class="stats-number" id="scoreGameOver" style="top: 70%;">0000</p>
+                <p class="stats-new-highscore" id="newHighScoreText">new highscore!</p>
+                <div class="back-home" onclick="backAfterGameOver()">go back</div>
+              </div>
+              <div id="gamePausedDiv" class="paused">
+                <span class="pause-div-top-centered">game paused</span>
+                <span class="pause-div-below-centered" onclick="continueGame()">continue</span>
+                <div class="pause-div-centered" id="quitText">
+                <span id="quitTextSpan" onclick="quitGame()">quit</span></div>
+              </div>
+        </div>
+      
+    </div>
+  <script type="module" src="coreFunctions.js"></script>
+  <script type="module" src="main.js"></script>
+
+</body>
+
+</html>
+
+
